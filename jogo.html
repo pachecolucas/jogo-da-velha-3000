@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Jogo Da Velha</title>
+        <style>
+            body {
+                background: black;
+                color: white;
+                text-align: center;
+                color: yellow;
+            }
+
+            table {
+                margin: 0 auto;
+                color: inherit;
+            }
+
+            td {
+                width: 100px;
+                height: 100px;
+                text-align: center;
+                font-size: 80px;
+                background: grey;
+                cursor: pointer;
+            }
+            td:hover {
+                background: lightslategray;
+            }
+
+            a {
+                color: inherit;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>Jogo da Velha 2</h1>
+        <p>Site da <a href="https://eliti.com.br/">Eliti</a></p>
+        <button onclick="mostrar()">Ver valor</button>
+        <table>
+            <tr>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+            </tr>
+            <tr>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+                <td onclick="marcar(this)"></td>
+            </tr>
+        </table>
+        <script>
+
+            let jogador = "X"
+
+            function marcar(celula) {
+                if (celula.innerHTML) return // gatekeeper
+                celula.innerHTML = jogador
+                trocarJogador()
+            }
+
+            function trocarJogador() {
+
+                // jogador = jogador == "X" ? "O" : "X"
+
+                if (jogador == "X") {
+                    jogador = "O"
+                } else {
+                    jogador = "X"
+                }
+            }
+        </script>
+    </body>
+</html>
